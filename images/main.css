@@ -1,0 +1,234 @@
+/*Criando o reset da pagina
+
+Em resumo, essa definição zera as margens e 
+preenchimentos padrão e garante que o modelo 
+de caixa seja consistente para todos os 
+elementos na página. Isso é comum no início 
+de muitos arquivos CSS para criar uma base 
+consistente para o layout.
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Definindo que os titulos h1, h2 e h3 terão a fonte abaixo*/
+header,
+section h2,
+section h3,
+form button {
+    font-family: "Bungee", sans-serif;
+/*Tirando o negrito do titulo, no qual é inserido pelo navegador automaticamente*/
+    font-weight: normal;
+
+}
+/*Definindo toda a fonte do body, input e text area*/
+body,
+input,
+textarea{
+    font-family: "Roboto", sans-serif;
+}
+
+/*Configurando o header*/
+
+header {
+    /*Acrescentando o espaçamento considerando 16px
+     parte de cima, e 0px para as laterais */
+    padding: 16px 0px;
+    /*Definindo a cor do background do header*/
+    background-color: #182C61;
+    /*Definindo a cor da fonte do header*/
+    color: #ecf0f1;
+}
+
+/*Alterando as propriedades presentes dentro
+do header, no nav, de forma especifica o que conter
+dentro do "li" */
+header nav li {
+
+    /*Informo que o display, forma de se apresentar
+    do "li" deverá ocorrer na mesma linha, ou seja um do lado do outro*/
+    display: inline;
+
+    /*Para o "li" não ficar colado em cima do outro, colocamos uma margem*/
+    margin-left: 16px;
+    /*Aumentar a fonte do menu*/
+    font-size: 18px;
+}
+
+/*Alterando as propriedades presentes dentro
+do header, no nav, de forma especifica o que conter
+dentro do "li" na tag "a"*/
+
+header nav li a{
+    /*Definindo a cor da fonte do li*/
+    color: #ecf0f1;
+    /*Tirando o sublinhado do texto*/
+    text-decoration: none;
+}
+
+/*Alterando as propriedades do container*/
+.container{
+
+    /*Estou configurando para que ele tenha 1280px
+    assim caso houve uma tela maior, ele não expandira
+    de forma excessiva*/
+    max-width: 1280px;
+    /*Ele ocupará 100% da largura, acompanhando o
+    max-width definido, assim sempre centralizando
+    ele de acordo*/
+    width: 100%;
+    /*Definindo a margem no topo e parte de baixo
+    como 0, e nas laterais "auto", isso para que ele
+    acompanhe a centralização, e não fique muito na
+    extrema direita e extrema esquerda*/
+    margin: 0 auto;
+}
+
+/*Para fazer com que o Menu fique ao lado do titulo
+Precisamos definir que dentro do header, o container
+tenha o display: flex*/
+/*Definindo duas tag header e section, com propriedades parecidas
+aqui estamos "pegando emprestado, as definições para o header
+e utilizando também para a section"*/
+header .container,
+section .container{
+    /*Definindo que os itens no header e na classe container
+    tenham o display flex, ou seja, ficaram um ao lado do outro*/
+    display: flex;
+    /*Para alinhar os itens na vertical, utilizamos o codigo abaixo*/
+    align-items: center;
+    /*Iremos fazer com que o H1 tenha um espaçamento proporcional
+    de distancia do menu, fazendo que ambos fiquem nas extremidades
+    definidas*/
+    justify-content: space-between;
+}
+/*Criando uma alteração de propriedade da classe
+brands-list, assim definindo os tamanhos das imagens presentes
+dentro da classe em 24px*/
+.brands-list img {
+    height: 24px;
+}
+/*Criando uma regra para que os "li" contidos dentro da classe
+fiquem em linha, ou seja, lado a lado*/
+.brands-list li {
+    display: inline;
+    /*Colocando uma margem a direita da lista dos logos*/
+    margin-right: 7px;
+}
+/*Estou definindo que os itens contidos dentro da classe container,
+presente dentro da section, devem ter o parametro: "flex-start", o
+que significa que alinha os itens do contêiner no início do eixo transversal
+Ou seja, como la em cima, foi utilizado a section .container como display flex
+agora ele está jogando todo o conteudo para a extremidade acima*/
+section .container {
+    align-items: flex-start;
+}
+
+section {
+    /*Criando um espaçamento superior e inferior em toda a section*/
+    padding: 24px 0;
+}
+
+/*Criando uma margem apenas inferior/ ao que está abaixo do titulo h2*/
+section h2{
+    margin-bottom: 16px;
+}
+/*Criando uma margem apenas inferior/ ao que está abaixo do paragrafo*/
+section p {
+    margin-bottom: 8px;
+}
+/*Definindo a cor da fonte da section*/
+section {
+    color: #182C61;
+}
+/*Criando um espaçamento lateral direito apenas para a classe abaixo*/
+.store-front {
+    margin-right: 32px;
+}
+/*Definindo propriedades da classe na imagem*/
+.social-links img {
+    /*Definindo a altura das imagens, e consequentemente
+    o navegador ajusta a largura, mantendo a proporção*/
+    height: 24px;
+}
+/*Definindo propriedades da classe dentro de li*/
+.social-links li {
+    /*Fazendo com que os itens da lista fiquem na mesma linha
+    e tenha uma margem a direita proporcional ao outro de 8px*/
+    display: inline;
+    margin-right: 8px;
+}
+/*Definindo propriedades da classe dentro de li "a"*/
+.social-links li a {
+    /*Ficou uma ponta preta em cada logo, com o parametro abaixo isso é removido*/
+    text-decoration: none;
+}
+
+/*Como estavamos anteriormente definindo que a classe container, deveria ter o display
+flex, agora criamos um id, dentro da section de contato
+e assim iremos pontualmente definir que precisamos alterar o .container
+dentro do id: #contact*/
+#contact .container {
+    /*Dessa forma fazemos com que os itens contidos dentro do container
+    do id contact, fiquem um abaixo do outro.*/
+    display: block;
+}
+
+/*Criando uma regra para a classe*/
+.contact-methods {
+    /*Definindo que os itens dentro da classe tenha o display flex, ou seja,
+    ficaram lado a lado, e separando eles de forma igual*/
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Definindo uma regra em cascata para as classes abaixo*/
+form input,
+form textarea,
+form button{
+    /*Informo que os itens do formulario precisaram ficar abaixo um do outro
+    e que suas larguras seram iguais em 320px, margem inferior e espaçamento interno*/
+    display: block;
+    width: 320px;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+/*Tirando a opção do usuário de redimensional o textarea*/
+form textarea {
+    resize: none;
+    height: 182px;
+}
+
+section h3 {
+    /*Espaçamento inferior de todos os titulos h3 contidos em sections*/
+    margin-bottom: 16px;
+}
+/*Definindo as caracteristicas do botão*/
+form button {
+    background-color: #182C61;
+    color: #ecf0f1;
+    /*Removendo a borda*/
+    border: none;
+    /*Criando o cursor que altera a setinha do mouse para uma mãozinha
+    informando ser um cursor clicavel*/
+    cursor: pointer;
+}
+/*Definindo para quando o indicador do mouse
+passar sobre o botão, ele alterar sua cor*/
+form button:hover {
+    background-color:#314b94;
+}
+/*Estamos definindo para que quando o usuário esteja dentro
+do input ou text area, a borda ao redor do campo fique aparecendo*/
+input:focus, textarea:focus {
+    outline-color: #182C61;
+}
+/*Configurando as propriedades do rodapé*/
+footer {
+    background-color: #182C61;
+    color: #ecf0f1;
+    padding: 16px;
+}
